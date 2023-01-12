@@ -1,0 +1,22 @@
+%btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  background-color: $color-cyan;
+  border: none;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0.8rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 700;
+  color: $color-white;
+
+  &:hover,
+  &:active {
+    background-color: darken($color-cyan, 15%);
+  }
+}
