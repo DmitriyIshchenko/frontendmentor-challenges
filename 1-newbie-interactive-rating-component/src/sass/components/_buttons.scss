@@ -1,0 +1,21 @@
+%btn {
+  display: block;
+  border: none;
+  border-radius: 100rem;
+  background-color: $color-orange;
+  transition: all 0.3s;
+
+  font-family: inherit;
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: $color-white;
+    color: $color-orange;
+  }
+}
