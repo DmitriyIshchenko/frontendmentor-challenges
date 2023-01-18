@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/sass/main.scss">
+  <link rel="shortcut icon" href="src/img/favicon-32x32.png" type="image/png">
+  <script defer src="src/script.js"></script>
+  <title>Rating | Frontend Mentor</title>
+</head>
+
+<body>
+  <main class="content">
+    <div class="rating">
+      <form class="rating__form">
+        <img class="rating__icon" src="src/img/icon-star.svg" alt="star icon">
+        <h3 class="rating__title">How did we do?</h3>
+        <p class="rating__text">Please let us know how we did with your support request. All feedback is appreciated to
+          help us improve our
+          offering!</p>
+        <fieldset class="rating__fieldset">
+          <input class="rating__input" type="radio" name="rating" value="1" id="rating-1" required>
+          <label class="rating__label" for="rating-1">
+            1
+          </label>
+
+          <input class="rating__input" type="radio" name="rating" value="2" id="rating-2">
+          <label class="rating__label" for="rating-2">
+            2
+          </label>
+
+          <input class="rating__input" type="radio" name="rating" value="3" id="rating-3">
+          <label class="rating__label" for="rating-3">
+            3
+          </label>
+
+          <input class="rating__input" type="radio" name="rating" value="4" id="rating-4">
+          <label class="rating__label" for="rating-4">
+            4
+          </label>
+
+          <input class="rating__input" type="radio" name="rating" value="5" id="rating-5">
+          <label class="rating__label" for="rating-5">
+            5
+          </label>
+
+        </fieldset>
+        <button class="rating__submit-btn" type="submit">Submit</button>
+      </form>
+      <div class="rating__submitted hidden">
+        <img src="src/img/illustration-thank-you.svg" alt="phone icon">
+        <p class="rating__selected">You selected 4 out of 5</p>
+        <h3 class="rating__title">Thank you!</h3>
+        <p class="rating__text">We appreciate you taking the time to give a rating. If you ever need more support, don’t
+          hesitate to get in touch!</p>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
