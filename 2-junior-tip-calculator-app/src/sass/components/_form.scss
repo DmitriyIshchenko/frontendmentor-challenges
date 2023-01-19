@@ -7,12 +7,11 @@
   border-radius: 2rem;
   background-color: $color-white;
 
-  &__fields {
-    flex: 1;
+  @include respond(medium) {
+    grid-template-columns: 1fr;
   }
 
   &__summary {
-    flex: 1;
     padding: 3.5rem;
     border-radius: 1.5rem;
     background-color: $color-cyan-darkest;
@@ -25,6 +24,10 @@
   &__reset-btn {
     margin-top: auto;
 
+    @include respond(medium) {
+      margin-top: 3rem;
+    }
+
     @extend %btn;
   }
 }
@@ -32,6 +35,10 @@
 .form-group {
   margin-bottom: 2rem;
   border: none;
+
+  @include respond(medium) {
+    margin-bottom: 3rem;
+  }
 
   input[type="number"] {
     padding-right: 1.2rem;
@@ -98,13 +105,22 @@
     grid-template-columns: repeat(3, min-content);
     gap: 1.5rem;
     text-align: center;
+
+    @include respond(medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__label-radio {
     padding: 0.5rem 3.5rem;
     border-radius: 0.5rem;
-    font-size: 2.4rem;
+    transition: all 0.3s;
 
+    font-size: 2.4rem;
     color: $color-white;
     background-color: $color-cyan-darkest;
     cursor: pointer;

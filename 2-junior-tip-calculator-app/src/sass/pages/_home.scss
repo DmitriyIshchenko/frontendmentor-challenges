@@ -10,10 +10,25 @@
   left: 50%;
   width: max-content;
   transform: translate(-50%, -50%);
+
+  @include respond(medium) {
+    width: 80%;
+  }
+
+  @include respond(smallest) {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
 }
 
 .logo {
   display: block;
   margin-bottom: 8rem;
   margin-inline: auto;
+
+  @include respond(smallest) {
+    margin-block: 5rem;
+  }
 }
