@@ -1,0 +1,159 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3.5rem;
+
+  border-radius: 2rem;
+  background-color: $color-white;
+
+  @include respond(medium) {
+    grid-template-columns: 1fr;
+  }
+
+  &__summary {
+    padding: 3.5rem;
+    border-radius: 1.5rem;
+    background-color: $color-cyan-darkest;
+    color: $color-white;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__reset-btn {
+    margin-top: auto;
+
+    @include respond(medium) {
+      margin-top: 3rem;
+    }
+
+    @extend %btn;
+  }
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  border: none;
+
+  @include respond(medium) {
+    margin-bottom: 3rem;
+  }
+
+  input[type="number"] {
+    padding-right: 1.2rem;
+    width: 100%;
+
+    border: none;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    background-color: $color-cyan-lightest;
+
+    font-family: inherit;
+    font-size: 2.4rem;
+    text-align: right;
+    color: $color-cyan-darkest;
+
+    &::placeholder {
+      color: $color-cyan-grey;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $color-cyan;
+    }
+
+    &:invalid {
+      border: 2px solid $color-red;
+    }
+  }
+
+  &__legend {
+    margin-bottom: 1rem;
+    color: $color-cyan-dark;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+  }
+
+  &__warning {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+
+    opacity: 0;
+    color: $color-red;
+  }
+
+  &__input:invalid ~ &__warning {
+    opacity: 1;
+  }
+
+  &__input-icon {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+
+    height: 1.3rem;
+  }
+
+  &__tip-selector {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    gap: 1.5rem;
+    text-align: center;
+
+    @include respond(medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__label-radio {
+    padding: 0.5rem 3.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+
+    font-size: 2.4rem;
+    color: $color-white;
+    background-color: $color-cyan-darkest;
+    cursor: pointer;
+  }
+
+  &__input-radio {
+    display: none;
+  }
+
+  &__input-radio:checked + &__label-radio {
+    background: lighten($color-cyan, 25%);
+    color: $color-cyan-darkest;
+  }
+}
+
+.summary-group {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  &__title {
+    align-self: end;
+  }
+  &__subtitle {
+    font-size: 1.2rem;
+    color: $color-cyan-grey;
+  }
+
+  &__amount {
+    grid-column: 2 / 3;
+    grid-row: 1/3;
+    text-align: end;
+
+    font-size: 4rem;
+    color: $color-cyan;
+  }
+}
