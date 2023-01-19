@@ -1,14 +1,14 @@
 {
-  "name": "1-tip-calculator-app",
+  "name": "2-tip-calculator-app",
   "version": "1.0.0",
   "description": "",
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist --public-url .",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -e junior-tip-calculator-app"
   },
-  "author": "",
+  "author": "Dmitriy Ishchenko",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
