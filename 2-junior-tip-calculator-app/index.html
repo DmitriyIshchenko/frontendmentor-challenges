@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/sass/main.scss" />
+  <script defer src="src/script.js"></script>
   <title>Tip calculator | Frontend Mentor</title>
 </head>
 
@@ -21,7 +22,8 @@
           <fieldset class="form-group">
             <legend class="form-group__legend">Bill</legend>
             <label class="form-group__label">
-              <input type="number" class="form-group__input form-group__input--bill" placeholder="0">
+              <input type="number" class="form-group__input form-group__input--bill" placeholder="0" data-type="bill"
+                pattern="^(0|[1-9]\d*)\.?\d{0,2}$" step="0.01" min="0.01" max="9999">
               <img src="src/img/icon-dollar.svg" class='form-group__input-icon' alt="dollar icon">
               <span class="form-group__warning">Can't be zero</span>
             </label>
@@ -32,29 +34,31 @@
             <legend class="form-group__legend">Select tip %</legend>
 
             <div class="form-group__tip-selector">
-              <input type="radio" name="amount" id="tip-5" class="form-group__input-radio" value="0.5">
+              <input type="radio" name="amount" id="tip-5" class="form-group__input-radio" value="5" data-type="tip">
               <label for="tip-5" class="form-group__label-radio">5%</label>
 
-              <input type="radio" name="amount" id="tip-10" class="form-group__input-radio" value="0.1">
+              <input type="radio" name="amount" id="tip-10" class="form-group__input-radio" value="10" data-type="tip">
               <label for="tip-10" class="form-group__label-radio">10%</label>
 
-              <input type="radio" name="amount" id="tip-15" class="form-group__input-radio" value="0.15">
+              <input type="radio" name="amount" id="tip-15" class="form-group__input-radio" value="15" data-type="tip">
               <label for="tip-15" class="form-group__label-radio">15%</label>
 
-              <input type="radio" name="amount" id="tip-25" class="form-group__input-radio" value="0.25">
+              <input type="radio" name="amount" id="tip-25" class="form-group__input-radio" value="25" data-type="tip">
               <label for="tip-25" class="form-group__label-radio">25%</label>
 
-              <input type="radio" name="amount" id="tip-50" class="form-group__input-radio" value="0.5">
+              <input type="radio" name="amount" id="tip-50" class="form-group__input-radio" value="50" data-type="tip">
               <label for="tip-50" class="form-group__label-radio">50%</label>
 
-              <input type="number" class="form-group__input-custom" placeholder="Custom">
+              <input type="number" class="form-group__input-custom" max="100" pattern="^d{0,3}$" placeholder="Custom"
+                data-type="tip">
             </div>
           </fieldset>
 
           <fieldset class="form-group">
             <legend class="form-group__legend">Number of People</legend>
             <label class="form-group__label">
-              <input type="number" class="form-group__input form-group__input--people" placeholder="0">
+              <input type="number" class="form-group__input form-group__input--people" placeholder="0"
+                data-type="people" pattern="^\d+$" min="1">
               <img src="src/img/icon-person.svg" class='form-group__input-icon' alt="dollar icon">
               <span class="form-group__warning">Can't be zero</span>
             </label>
@@ -65,13 +69,13 @@
           <div class="summary-group">
             <p class="summary-group__title">Tip amount</p>
             <p class="summary-group__subtitle">/ person</p>
-            <p class="summary-group__amount">$0.00</p>
+            <p class="summary-group__amount summary-group__amount--tip">$0.00</p>
           </div>
 
           <div class="summary-group">
             <p class="summary-group__title">Total</p>
             <p class="summary-group__subtitle">/ person</p>
-            <p class="summary-group__amount">$0.00</p>
+            <p class="summary-group__amount summary-group__amount--total">$0.00</p>
           </div>
           <button class="form__reset-btn" type="reset">Reset</button>
         </div>
